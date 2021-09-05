@@ -1,2 +1,12 @@
+# gitignore template for LTspice
+
+
+# Logfile
 *.log
+
+# Simulation Outputs
+*.raw
 *.fft
+
+# Netlist
+*.net
