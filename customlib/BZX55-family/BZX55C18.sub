@@ -1,0 +1,37 @@
+********************************
+* Copyright:                   *
+* Vishay Intertechnology, Inc. *
+********************************
+BZX55C18			
+
+* Technology:        DISCRETE DEVICE			
+* Device:            Zener Diode BZX 55C 18			
+* Type:              Typical (nom)			
+* Model established: 12.11.1996, by S.Reuter, TM1iC63-HN			
+* Wafer:			
+* Remarks:           Macro model			
+* Revision:			
+* Simulator:         PSPICE			
+
+.SUBCKT BZX18 a c			
+
+ DF a c DFOR
+ DR c a DREV
+ DB b a DBRE
+ EB c b POLY(1) d 0 16.2 1
+ IB 0 d 1m
+ RB 0 d 1k TC=19m
+
+.MODEL DFOR D
+ + IS =  60p  RS = 500m  N  =  1.6  CJO=43.6p
+ + VJ = 700m  M  = 420m  FC = 700m  XTI=    3
+ + EG =1.186
+
+.MODEL DREV D
+ + IS = 100f  N  =   34  XTI=    3  EG =1.186
+
+.MODEL DBRE D
+ + IS =  10f  RS =   20  N  =    1  XTI=    0			
+ + EG =1.186			
+			
+.ENDS BZX18			
